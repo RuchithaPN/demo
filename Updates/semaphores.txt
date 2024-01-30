@@ -1,0 +1,79 @@
+
+Multithreading:
+
+Multithreading allows multiple threads to execute concurrently, and each thread can perform its own set of tasks simultaneously. 
+In a multithreaded application, threads share the same resources like memory space but have their own execution context.
+
+
+*********************************
+
+Semaphores are synchronization primitives that play a crucial role in multithreading environments. 
+The use of the semaphore ensures that only a limited number of threads  can concurrently execute the critical section (booking a seat). 
+It ensures that the shared resource (seats) is accessed in a controlled manner.
+
+A semaphore controls access to a shared resource through the use of a counter. 
+If the counter is greater than zero, then access is allowed. If it is zero, then access is denied. 
+Thus, to access the resource, a thread must be granted a permit from the semaphore.
+
+
+Example-The ride can only accommodate a limited number of people at a time, so the park has implemented a line system
+to manage the flow of people into the ride. Each person waiting in line is like a thread in a multi-threaded program,
+and the ride operator is like a semaphore. The ride operator ensures that only a certain number of people at a time can board the ride,
+avoiding overcrowding and ensuring a safe and efficient experience for everyone.
+
+***********************************
+
+Working of semaphore
+
+to use a semaphore, the thread that wants access to the shared resource tries to acquire a permit.
+
+If the semaphore’s count is greater than zero, then the thread acquires a permit, which causes the semaphore’s count to be decremented.
+Otherwise, the thread will be blocked until a permit can be acquired.
+When the thread no longer needs an access to the shared resource, it releases the permit, which causes the semaphore’s count to be incremented.
+If there is another thread waiting for a permit, then that thread will acquire a permit at that time
+
+****************************************
+
+2. Types of Semaphores:
+There are two types of semaphores:
+
+a. Binary Semaphore: This type of semaphore can only take two values, typically 0 and 1.
+ It is often used for mutual exclusion, where the semaphore is 0 if the resource is being used, and 1 if it's available.
+
+b. Counting Semaphore: This type of semaphore can take multiple values.
+ It is often used to control access to a pool of resources. For example, if you have a pool of 5 resources, the semaphore could have values ranging from 0 to 5.
+
+
+
+
+********************************************************************
+
+
+Use Case 1: Resource Allocation
+Semaphores can be used to allocate a limited number of resources to multiple threads. 
+For example, a database system may have a limited number of connections it can handle at a time. 
+A semaphore can be used to keep track of the number of available connections and control access to them, 
+ensuring that the number of connections does not exceed the maximum allowed.
+
+Use Case 3: Synchronization
+Semaphores can also be used to synchronize the execution of multiple threads. 
+For example, two threads may need to communicate with each other, with one thread signaling the other that it is finished with a task. 
+A semaphore can be used as a signaling mechanism, allowing the first thread to signal the second that it is finished 
+and the second thread can then proceed with its work.
+
+
+
+*************************************************************************************
+
+
+
+
+What do the other threads do while waiting for access?
+
+While waiting for access to the shared resource, the other threads that have called the acquire method on the semaphore will be blocked. 
+Blocked threads are in a waiting state, and they are not scheduled to run until the semaphore value is incremented,
+which allows them to access the shared resource
+
+The main problem with semaphores is that they require busy waiting, 
+If a process is in the critical section, then other processes trying to enter the critical section will be waiting 
+until the critical section is not occupied by any process.

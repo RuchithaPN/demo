@@ -1,0 +1,102 @@
+
+Web Application -- codebase  -- resides in a Git Repository
+
+
+        Step 1: Clone the Codebase from the Remote Git Repository to our Local Repository
+
+              ---> Open your command line or terminal.
+              ---> Navigate to the directory where we want to clone the project:
+                     Ex: cd your-project-folder
+              ---> Clone the codebase from the Git repository:
+                     Ex: git clone https://github.com/yourcompany/yourproject.git
+ 
+        Step 2: Set Up the Complete Application Using the Codebase
+
+
+	      ---> Navigate to the backend (Spring Boot) project folder:
+		      Ex: cd yourproject/backend
+              ---> Build the Spring Boot application using Maven (assuming you have Maven installed):
+                      Ex: mvn clean install
+              ---> Start the Spring Boot application:
+                      Ex: java -jar target/yourproject.jar
+              ---> Navigate to the frontend (Angular) project folder:
+                      Ex:cd ../frontend
+              ---> Install the Angular CLI globally if you haven't already:
+                      Ex: npm install -g @angular/cli
+              ---> Start the Angular development server:
+                      Ex: ng serve
+
+
+        Step 3: Checking Out the Complete Codebase from the Application's Remote Repository  
+
+              ---> Ensure we're in the project's root directory:
+                     cd yourproject(git checkout branch name)
+              ---> Pull the latest changes from the remote repository:
+                     git pull  
+
+
+	Step 4: Codebase Available in Local Repo
+
+              ---> At this stage, we have the codebase available in your local repository, 
+
+
+	Step 5: Set Up Application Components (Microservices, Front End, and Database)
+
+
+
+
+
+------------------------------------------------ Responsibility to ask ---------------------------------------------------------------
+
+
+
+**1. Functional Workflow of the Project:**
+
+   -- Explanation:* Understanding the functional workflow of the project is crucial for effective development and testing. 
+                  * It provides insights into how the application behaves from a user's perspective.
+                  * It provides a high-level overview of the features, user journeys, and key processes within the application.
+
+   -- Importance: * Knowing the functional workflow helps developers make informed decisions about code changes and testing scenarios.
+                  * A clear understanding of the workflow enables efficient debugging, testing, and feature development.
+
+   -- Example:* If you're working on an e-commerce website, the functional workflow might include:
+     		---- User registration and login.
+    		---- Browsing products and categories.
+     		---- Adding items to the cart.
+     		---- Proceeding to checkout and making a purchase.
+    		---- Viewing order history.
+
+
+**2. Repository Details to Checkout Project to the Local:**
+
+   -- Explanation:* Accessing the codebase is fundamental to working on the project.
+		  * This involves obtaining the information needed to access the project's codebase from a remote Git repository.
+		  * The repository details include the URL of the remote Git repository, which is necessary to clone the project to your local development environment.
+
+   -- Importance:* Access to the codebase is essential for development, collaboration, and version control.
+                 * Access to the repository allows you to clone the project's codebase to your local machine and collaborate with team members effectively.
+
+   -- Example:* Repository details might include:
+     		---- Git repository URL, e.g., `https://github.com/yourcompany/yourproject.git`.
+    		---- To clone the repository locally, you would use the following Git command:
+              	        git clone https://github.com/yourcompany/yourproject.git(This command downloads the entire codebase from the remote repository to your local machine, allowing you to work on the project.)
+     		---- Credentials, if necessary (username and password or SSH keys).
+    		---- Information on the branch to check out (e.g., `main` or `development`).
+
+
+**3. Design Document Related to the Project:**
+
+   -- Explanation:* Design documents provide an overview of the project's architecture, data structures, and key design decisions.
+		  * Design documents provide essential insights into the project's architecture, data models, and system components.
+		  * They are valuable references for understanding the underlying structure of the application, including database schemas, API endpoints, and third-party integrations.
+		  * Design documents help ensure that your development work aligns with the project's intended architecture and design principles, reducing the risk of architectural issues or misunderstandings.
+
+   -- Importance:* Design documents serve as a reference for understanding the system's structure and making informed development choices.
+
+   -- Example:* Design documents may include:
+       		---- Architectural Diagrams: Visual representations of the system's components and their interactions.
+		---- Database Schema: Details about the structure of the database, including tables, relationships, and data types.
+    		---- Data flow diagrams.
+     		---- Technology stack and design patterns used.
+		---- API Documentation:Information about API endpoints, request methods, and expected responses.
+		---- User Interface (UI) Wireframes: Sketches or mockups illustrating the application's user interface.

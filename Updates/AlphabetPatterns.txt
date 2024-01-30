@@ -1,0 +1,96 @@
+****************************************************************
+1)
+
+package practice;
+
+public class AlphabetPattern {
+    public static void main(String[] args) {
+        int n = 5; // Number of rows
+
+        printAlphabetPattern(n);
+    }
+
+    static void printAlphabetPattern(int n) {
+        char currentChar = 'A';
+
+        for (int i = 0; i <n; i++) {
+            	for (int j = 0; j <=i; j++) {
+                    System.out.print(currentChar + " ");
+                    currentChar++;
+                }
+            for (int k = 0; k <=i; k++) {
+                System.out.print(" *");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+The time complexity is O(n^2).
+The space complexity of O(1).
+
+
+Output:
+
+A  *
+B C  * *
+D E F  * * *
+G H I J  * * * *
+K L M N O  * * * * *
+
+*****************************************************************
+2)
+public class AlphabetPattern1 {
+    public static void main(String[] args) {
+        printAlphabetPattern();
+    }
+
+    static void printAlphabetPattern() {
+        String firstWord = "SUNSHINES";
+        String secondWord = "EASTSIDE";
+
+        printPatternForWord(firstWord);
+        System.out.println(); // Add a newline between patterns
+        printPatternForWord(secondWord);
+    }
+
+    static void printPatternForWord(String word) {
+        int length = word.length();
+
+        for (int i = 0; i < length; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print("  "); // Print two spaces for indentation
+            }
+            System.out.println(word.charAt(i));
+        }
+    }
+}
+
+
+The time complexity is O(1).
+The space complexity is also O(1).
+
+Output:
+
+S
+  U
+    N
+      S
+        H
+          I
+            N
+              E
+                S
+
+E
+  A
+    S
+      T
+        S
+          I
+            D
+              E
+
+
+

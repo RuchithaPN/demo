@@ -1,0 +1,137 @@
+<div class="card text-center">
+    <div class="card-header">
+        <h2>Choose Calculator</h2>
+    </div>
+
+</div>
+<div class="row text-center m-4">
+    <div class="col-sm-4 ">
+        <div class="card" style="height: 450px;">
+            <div class="card-body">
+                 <img src="https://doeren.com/wp-content/uploads/2017/01/interest-calculator-1200x794.jpg" alt="" height="380rem" width="320rem">
+                <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#exampleModal">
+                    Intrest Calculator
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 ">
+        <div class="card" style="height: 450px;">
+            <div class="card-body">
+                <img src="https://www.fedsmith.com/wp-content/uploads/2015/11/SalaryCalculatorScreen.jpg" alt="" height="380rem" width="320rem">
+                <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#exampleModal">
+                    Salary Calculator
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card" style="height: 450px;">
+            <div class="card-body">
+                <img src="https://tse1.mm.bing.net/th/id/OIP.DEp3c52JxTXfWFtVCtsX3gHaEK?pid=ImgDet&rs=1" alt="" height="380rem" width="320rem">
+                <button type="button" class="btn btn-primary m-2" data-toggle="modal" data-target="#exampleModal">
+                  Calorie Calculator
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="modal fade bd-example-modal-lg " id="exampleModal" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class=" modal-dialog modal-dialog-centered  modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Salary Calculator</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-6">
+                        <form>
+                            <div class="mb-3">
+                                <label for="Age" class="form-label">Enter Age</label>
+                                <input type="number" name="Age" class="form-control" [(ngModel)]="salaryCalculator.age"
+                                    min="18" max="100" id="Age">
+                            </div>
+                            <div class="mb-3">
+                                <label for=" salary" class="form-label">Enter Salary in Rupees</label>
+                                <input type="text" name="salary" class="form-control"
+                                    [(ngModel)]="salaryCalculator.salary" id="salary">
+                            </div>
+                            <div class="mb-3">
+                                <label for="hRA" class="form-label">Home Rental Allowance(HRA)</label>
+                                <input type="text" name="hRA" class="form-control" [(ngModel)]="salaryCalculator.hRA"
+                                    id="hRA">
+                            </div>
+                            <div class="mb-3">
+                                <label for="lTA" class="form-label">Leave Travel Allowance(LTA)</label>
+                                <input type="number" name="lTA" class="form-control" [(ngModel)]="salaryCalculator.lTA"
+                                    id="lTA">
+                            </div>
+                            <div class="mb-3">
+                                <label for="sA" class="form-label">Special Allowence(SA)</label>
+                                <input type="number" name="sA" class="form-control" [(ngModel)]="salaryCalculator.sA"
+                                    id="sA">
+                            </div>
+                            <div class="mb-3">
+                                <label for="deduction" class="form-label">Deduction</label>
+                                <input type="number" name="deduction" class="form-control"
+                                    [(ngModel)]="salaryCalculator.deduction" max="150000" id="deduction">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <table>
+                                    <tr>
+                                        <td class="td">Gross Salary:</td>
+                                        <td>{{ salaryCalculator.grossSalary}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td">Net Salary:</td>
+                                        <td>{{ salaryCalculator.netSalary}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td">Tax Amount:</td>
+                                        <td>{{ salaryCalculator.taxAmount}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td">Tax:</td>
+                                        <td>{{ salaryCalculator.tax}}%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td">Tax Payable:</td>
+                                        <td>{{ salaryCalculator.taxPayable}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td">Tax Liability:</td>
+                                        <td>{{ salaryCalculator.taxLiability}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td">Cess:</td>
+                                        <td>{{ salaryCalculator.cess}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td">Sur Charge:</td>
+                                        <td>{{ salaryCalculator.surCharge}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class=" container-fluid justify-content-between m-4">
+                            <button type="button" class="btn btn-secondary m-2" data-dismiss="modal">Close</button>
+                            <button type="button" (click)="onSubmit()" class="btn btn-primary m-2">Calculate</button>
+                        </div>
+                    </div>
+                    <div class="col">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

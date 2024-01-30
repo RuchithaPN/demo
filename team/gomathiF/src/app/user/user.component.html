@@ -1,0 +1,78 @@
+
+  <div class="card-body">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Caloriecalculator
+    </button>
+  </div>
+
+<div class="modal fade bd-example-modal-lg mt-5 mb-4" id="exampleModal" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class=" modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Caloriecalculator</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="convertedRecord">
+          <div class="mb-3">
+            <label for="gender" class="form-label">Gender</label>
+            <select name="gender" class="form-control" formControlName="gender" id="gender">
+              <option value="MALE">Male</option>
+              <option value="FEMALE">Female</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="height" class="form-label">Height in cm</label>
+            <input type="number" name="height" class="form-control" formControlName="height" id="height">
+          </div>
+
+          <div class="mb-3">
+            <label for="weight" class="form-label">Weight in kg</label>
+            <input type="number" name="weight" class="form-control" formControlName="weight" id="weight">
+          </div>
+
+          <div class="mb-3">
+            <label for="age" class="form-label">Age</label>
+            <input type="number" name="age" class="form-control" formControlName="age" id="age">
+          </div>
+
+          <div class="mb-3">
+            <label for="activityLevel" class="form-label">Activity Level</label>
+            <select name="activityLevel" class="form-control" formControlName="activityLevel" id="activityLevel">
+              <option value="SEDENTARY">Sedentary</option>
+              <option value="LIGHTLY_ACTIVE">Lightly Active</option>
+              <option value="MODERATELY_ACTIVE">Moderately Active</option>
+              <option value="VERY_ACTIVE">Very Active</option>
+              <option value="EXTREMELY_ACTIVE">Extra Active</option>
+            </select>
+          </div>
+
+        </form>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" (click)="calculateBmr()" class="btn btn-primary">Add</button>
+        </div>
+
+        <div class="card" >
+                <div class="card-body">
+                    <table>
+                        <tr>
+                            <td class="td">BMR :</td>
+                            <td>{{ convertedRecordResult.bmr }}</td>
+                        </tr>
+                       
+                        <tr>
+                            <td class="td">Daily Calorie Needs :</td>
+                            <td>{{ convertedRecordResult.dailyCalorieNeeds }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>

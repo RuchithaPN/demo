@@ -1,0 +1,67 @@
+SOLID principle is an acronym that stands for 5 key principles in software development: 
+
+S – Single Responsibility Principle 
+O – Open Closed Principle 
+L – Liskov Substitution Principle
+I – Interface Segregation Principle
+D – Dependency Inversion Principle
+
+
+**************************************************************************************************
+Example based on OOAD:
+
+
+
+	public class Car {
+	     private String make;
+    	     private String model;
+
+        public Car(String make, String model) {
+            this.make = make;
+            this.model = model;
+          }
+
+        public void drive() {
+       
+            System.out.println("Driving the " + make + " " + model);
+         }
+
+        public void displayInfo() {
+
+            System.out.println("Car Information: " + make + " " + model);
+         }
+     }
+
+
+***********************************************************************************************************************************
+
+Refactored using Single Responsibility Principle:
+
+
+	// Car class responsible for driving
+	public class Car {
+  	  private String make;
+  	  private String model;
+
+ 	public Car(String make, String model) {
+    	  this.make = make;
+       	  this.model = model;
+   	 }
+
+        public void drive() {
+    	  System.out.println("Driving the " + make + " " + model);
+   	 }
+        }
+
+	// CarInfoPrinter class responsible for displaying information
+	public class CarInfoPrinter {
+    	  public void displayInfo(Car car) {
+            System.out.println("Car Information: " + car.getMake() + " " + car.getModel());
+      }
+    }
+
+
+In this refactored example, the `Car` class is responsible only for the driving functionality,
+ and the `CarInfoPrinter` class is responsible for displaying information. Each class now has a single responsibility, adhering to the Single Responsibility Principle.
+
+
